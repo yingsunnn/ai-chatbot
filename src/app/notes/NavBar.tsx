@@ -13,7 +13,7 @@ import { dark } from "@clerk/themes";
 import { useTheme } from "next-themes";
 
 export default function NavBar() {
-  const { theme } = useTheme;
+  const { theme } = useTheme();
   const [showAddEditNoteDialog, setShowAddEditNoteDialog] = useState(false);
 
   return (
