@@ -20,7 +20,7 @@ export default async function NotesPage() {
         <Note note={note} key={note.id} />
       ))}
       {allNotes.length === 0 && (
-        <div className="col-span-full text-center">
+        <div className="col-span-full textcenter">
           {"You don't have any notes yet."}
         </div>
       )}
