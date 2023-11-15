@@ -28,6 +28,8 @@ export async function POST(req: Request) {
       filter: { userId },
     });
 
+    console.log("vectorQueryResponse: ", JSON.stringify(vectorQueryResponse));
+
     const relevantNotes = await prisma.note.findMany({
       where: {
         id: {
