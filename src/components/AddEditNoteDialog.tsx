@@ -140,7 +140,7 @@ export default function AddEditNoteDialog({
                 </FormItem>
               )}
             />
-            <DialogFooter className="sm: gap-0 gap-1">
+            <DialogFooter className="sm:gap-0 gap-1">
               {noteToEdit && (
                 <LoadingButton
                   variant="destructive"
