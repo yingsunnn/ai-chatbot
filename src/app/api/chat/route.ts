@@ -2,13 +2,17 @@ import { notesIndex } from "@/lib/db/pinecone";
 import prisma from "@/lib/db/prisma";
 import openai, { getEmbedding } from "@/lib/openai";
 import { auth } from "@clerk/nextjs";
-import { ChatCompletionMessage } from "openai/resources/index.mjs";
 import { OpenAIStream, StreamingTextResponse } from "ai";
+
+interface SystemMessage {
+  role: "system",
+  content: string,
+}
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const messages: ChatCompletionMessage[] = body.messages;
+    const messages: SystemMessage[] = body.messages;
     const messageTruncated = messages.slice(-6);
 
     // find relevant notes
@@ -32,10 +36,9 @@ export async function POST(req: Request) {
       },
     });
 
-    const systemMessage: ChatCompletionMessage = {
-      role: "assistant",
-      content:
-        "Your are an intelligent note-taking app. You answer the user's questions based on their existing notes." +
+    const systemMessage: SystemMessage = {
+      role: "system",
+      content: "Your are an intelligent note-taking app. You answer the user's questions based on their existing notes." +
         "The relevant notes for this query are:\n" +
         relevantNotes
           .map((note) => `Title: ${note.title}\n\nContent:\n${note.content}`)
