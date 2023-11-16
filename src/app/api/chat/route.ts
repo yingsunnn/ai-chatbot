@@ -7,15 +7,11 @@ import { OpenAIStream, StreamingTextResponse } from "ai";
 
 export async function POST(req: Request) {
   try {
-    console.log("Start sending openai request.");
     const body = await req.json();
-    console.log("body: ", JSON.stringify(body));
     const messages: ChatCompletionMessage[] = body.messages;
-
-    console.log("messages: ", JSON.stringify(messages));
-
     const messageTruncated = messages.slice(-6);
 
+    // find relevant notes
     const embedding = await getEmbedding(
       messageTruncated.map((message) => message.content).join("\n"),
     );
@@ -28,8 +24,6 @@ export async function POST(req: Request) {
       filter: { userId },
     });
 
-    console.log("vectorQueryResponse: ", JSON.stringify(vectorQueryResponse));
-
     const relevantNotes = await prisma.note.findMany({
       where: {
         id: {
@@ -37,8 +31,6 @@ export async function POST(req: Request) {
         },
       },
     });
-
-    console.log("Relevant notes found: ", relevantNotes);
 
     const systemMessage: ChatCompletionMessage = {
       role: "assistant",
@@ -50,6 +42,7 @@ export async function POST(req: Request) {
           .join("\n\n"),
     };
 
+    // Send message to openai
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       stream: true,
