@@ -34,10 +34,10 @@ export default function Note({ note }: NoteProps) {
             {createdUpdatedAtTimestamp}
             {wasUpdated && " (updated)"}
           </CardDescription>
-          <CardContent>
-            <p className="whitespace-pre-line">{note.content}</p>
-          </CardContent>
         </CardHeader>
+        <CardContent>
+          <p className="whitespace-pre-line">{note.content}</p>
+        </CardContent>
       </Card>
       <AddEditNoteDialog
         open={showEditDialog}
