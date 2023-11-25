@@ -15,17 +15,16 @@ interface AiChatBoxProps {
 
 export default function AiChatBox({ open, onClose }: AiChatBoxProps) {
   const {
-    messages,
-    input,
-    handleInputChange,
-    handleSubmit,
-    setMessages,
-    isLoading,
-    error,
-  } = useChat();
-
-  const inputRef = useRef<HTMLInputElement>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
+      messages,
+      input,
+      handleInputChange,
+      handleSubmit,
+      setMessages,
+      isLoading,
+      error,
+    } = useChat(),
+    inputRef = useRef<HTMLInputElement>(null),
+    scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -104,8 +103,8 @@ function ChatMessage({
 }: {
   message: Pick<Message, "role" | "content">;
 }) {
-  const { user } = useUser();
-  const isAiMessage = role === "assistant";
+  const { user } = useUser(),
+    isAiMessage = role === "assistant";
 
   return (
     <div
