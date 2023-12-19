@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Summary
+Explore all-in-one app with seamless user management, note handling, light/dark theme, and AI chat. Effortlessly sign up, manage notes, and switch themes. Engage with AI for intelligent responses based on your notes. Elevate your experience for enhanced productivity.
 
-## Getting Started
+# Teck Stack
+- [OpenAI API]()
+- [Vercel AI]()
+- [Pinecone](https://www.pinecone.io/)
+- [MongoDB](https://www.mongodb.com/)
+- [Clerk](https://clerk.com)
+- ReactJS 14
+- Shadcn UI
+- Tailwind
+- Typescript
+- zed
+- Presma
 
-First, run the development server:
+# Features
+- User Management 
+  - Sign up
+  - Sign in
+  - Sign out
+  - Manage account
+- Note
+  - Add a new note
+  - Update note
+  - Delete note
+- Light/Dark theme
+- AI Chat
+  - Ask AI questions 
+  - AI answer you based on your notes
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Screenshots
+- Landing Page
+  ![landing](./screenshots/Landing.jpg)
+- Chatbot
+  ![AI](./screenshots/AI.jpg)
+- New note
+  ![new note](./screenshots/NewNote.jpg)
+- Edit note
+  ![edit note](./screenshots/EditNote.jpg)
+- Dark Theme
+  ![dark](./screenshots/DarkTheme.jpg)
+- Notes
+  ![notes](./screenshots/Notes.jpg)
+- Sign In
+  ![Sign in](./screenshots/SignIn.jpg)
+- Sign out
+  ![Sign out](./screenshots/SignOut.jpg)
+
+# Getting Started
+1. Installation
+```shell
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server
+```shell
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open page with your browser to see the result.
+  - [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Reference
+The project is based on this [YouTube Tutorial](https://youtu.be/mkJbEP5GeRA?si=IY5-_swNiSVgkpHv)
