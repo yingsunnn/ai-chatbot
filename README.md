@@ -61,7 +61,5 @@ npm run dev
 3. Open page with your browser to see the result.
   - [http://localhost:3000](http://localhost:3000)
 
-
-
 # Reference
-The project is based on this [YouTube Tutorial](https://youtu.be/mkJbEP5GeRA?si=IY5-_swNiSVgkpHv)
+The project is based on this [YouTube Tutorial](https://youtu.be/mkJbEP5GeRA?si=IY5-_swNiSVgkpH1)
