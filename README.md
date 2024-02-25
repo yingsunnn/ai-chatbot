@@ -11,7 +11,7 @@ Explore all-in-one app with seamless user management, note handling, light/dark 
 - Shadcn UI
 - Tailwind
 - Typescript
-- zed
+- [zod](https://zod.dev/?id=introduction)
 - Presma
 
 # Features
